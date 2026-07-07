@@ -1,0 +1,148 @@
+.services-page .page-hero {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a3a5c 100%);
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.services-page .page-hero h1 {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.services-page .page-hero p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+}
+
+.services-list {
+  padding: 80px 0;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.service-item.reverse {
+  direction: rtl;
+}
+
+.service-item.reverse > * {
+  direction: ltr;
+}
+
+.service-icon-main {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.service-content h2 {
+  margin-bottom: 16px;
+}
+
+.service-desc {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.service-features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.service-features li svg {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.service-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.visual-box {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, #e8f4fc 100%);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a3a5c 100%);
+  padding: 80px 0;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-content h2 {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .service-item {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .service-item.reverse {
+    direction: ltr;
+  }
+
+  .service-visual {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-features {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-box {
+    width: 200px;
+    height: 200px;
+  }
+}

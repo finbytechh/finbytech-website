@@ -1,0 +1,189 @@
+.oneclick-page .page-hero {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a3a5c 100%);
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.oneclick-page .page-hero h1 {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.oneclick-page .page-hero p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+}
+
+.intro-section {
+  padding: 80px 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.intro-content h2 {
+  margin-bottom: 24px;
+}
+
+.intro-content p {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.intro-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.intro-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.visual-card {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: var(--shadow-xl);
+}
+
+.features-section {
+  padding: 80px 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 auto 20px;
+}
+
+.feature-item h4 {
+  margin-bottom: 12px;
+}
+
+.feature-item p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.brokers-section {
+  padding: 80px 0;
+}
+
+.brokers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.broker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+
+.broker-item svg {
+  color: var(--success);
+}
+
+.brokers-note {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a3a5c 100%);
+  padding: 80px 0;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-content h2 {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brokers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brokers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-buttons {
+    flex-direction: column;
+  }
+
+  .visual-card {
+    width: 200px;
+    height: 200px;
+  }
+}
