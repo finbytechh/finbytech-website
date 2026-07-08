@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Target, Lightbulb, Award, Users, Cpu, Globe, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import './About.css';
 
 const COMPANY = {
@@ -35,6 +36,11 @@ function About() {
 
   return (
     <div className="about-page">
+      <SEO
+        title="About Us - Our Story, Mission & Team"
+        description="Learn about FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED - our mission, values, team, and commitment to delivering exceptional IT solutions. CIN: U62013UP2024OPC213677. Based in Jhansi, Uttar Pradesh."
+        canonical="/about"
+      />
       <section className="page-hero">
         <div className="container">
           <span className="page-label">About Us</span>

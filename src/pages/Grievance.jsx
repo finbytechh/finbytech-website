@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -21,6 +22,11 @@ function Grievance() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Grievance Redressal Policy"
+            description="Read FINBYTECHNOVATION IT SOLUTIONS' Grievance Redressal Policy. Learn how to submit and resolve complaints with our dedicated grievance officer and resolution process."
+            canonical="/grievance"
+          />
           <h1>Grievance Redressal Policy</h1>
           <p className="hero-subtitle">Complaint resolution mechanism for our customers</p>
         </div>

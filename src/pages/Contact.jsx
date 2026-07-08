@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Building, Globe, ArrowRight, CircleCheck as CheckCircle, CircleAlert as AlertCircle, Loader } from 'lucide-react';
+import SEO from '../components/SEO';
 import './Contact.css';
 
 const COMPANY = {
@@ -156,6 +157,11 @@ function Contact() {
 
   return (
     <div className="contact-page">
+      <SEO
+        title="Contact Us - Get in Touch"
+        description="Contact FINBYTECHNOVATION IT SOLUTIONS for IT services, software development, digital marketing, or trading technology inquiries. Call +91 96511 18519, email info@finbytech.com, or chat on WhatsApp."
+        canonical="/contact"
+      />
       {/* Hero */}
       <section className="page-hero">
         <div className="container">

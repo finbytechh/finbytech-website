@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -13,6 +14,11 @@ function Shipping() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Shipping & Delivery Policy"
+            description="Read FINBYTECHNOVATION IT SOLUTIONS' Shipping and Delivery Policy for digital products and services. Understand our delivery timelines and terms."
+            canonical="/shipping"
+          />
           <h1>Shipping Policy</h1>
           <p className="hero-subtitle">Delivery terms for physical products</p>
         </div>

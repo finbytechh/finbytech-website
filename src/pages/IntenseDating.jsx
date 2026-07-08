@@ -1,4 +1,5 @@
 import { Heart, Video, Phone, CircleCheck as CheckCircle, Zap, Award, Globe, ArrowRight, Users, MessageCircle, Shield, Lock, Sparkles } from 'lucide-react';
+import SEO from '../components/SEO';
 import './IntenseDating.css';
 
 const COMPANY = {
@@ -38,6 +39,11 @@ function IntenseDating() {
 
   return (
     <div className="intense-dating-page">
+      <SEO
+        title="Intense Dating - India's Premium Dating App"
+        description="Intense Dating - India's premium dating app featuring Private Chat, Video Calling, Voice Calling, Verified Profiles, AI Matchmaking, and Premium Membership. Developed by FINBYTECHNOVATION IT SOLUTIONS."
+        canonical="/intense-dating"
+      />
       {/* Hero */}
       <section className="page-hero">
         <div className="hero-bg">

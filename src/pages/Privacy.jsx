@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -13,6 +14,11 @@ function Privacy() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Privacy Policy"
+            description="Read FINBYTECHNOVATION IT SOLUTIONS' Privacy Policy. Learn how we collect, use, protect, and manage your personal information across our services and platforms."
+            canonical="/privacy"
+          />
           <h1>Privacy Policy</h1>
           <p className="hero-subtitle">How we collect, use, and protect your personal information</p>
         </div>

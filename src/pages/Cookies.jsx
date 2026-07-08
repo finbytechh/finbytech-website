@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -13,6 +14,11 @@ function Cookies() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Cookie Policy"
+            description="Read FINBYTECHNOVATION IT SOLUTIONS' Cookie Policy. Understand how we use cookies and similar tracking technologies on our websites and services."
+            canonical="/cookies"
+          />
           <h1>Cookie Policy</h1>
           <p className="hero-subtitle">How we use cookies on our websites and applications</p>
         </div>

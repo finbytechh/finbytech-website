@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -17,6 +18,11 @@ function Terms() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Terms and Conditions"
+            description="Read the Terms and Conditions for FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED. Learn about our service terms, user obligations, intellectual property, payment terms, and governing law."
+            canonical="/terms"
+          />
           <h1>Terms and Conditions</h1>
           <p className="hero-subtitle">Please read these terms carefully before using our services</p>
         </div>

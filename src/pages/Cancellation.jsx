@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -13,6 +14,11 @@ function Cancellation() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Cancellation Policy"
+            description="Read FINBYTECHNOVATION IT SOLUTIONS' Cancellation Policy. Understand how to cancel services, subscriptions, and projects with clear terms and conditions."
+            canonical="/cancellation"
+          />
           <h1>Cancellation Policy</h1>
           <p className="hero-subtitle">Terms and conditions for order cancellation</p>
         </div>

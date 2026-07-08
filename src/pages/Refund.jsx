@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -13,6 +14,11 @@ function Refund() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Refund Policy"
+            description="Read FINBYTECHNOVATION IT SOLUTIONS' Refund Policy. Understand our refund terms for project-based services, subscriptions, digital products, and trading technology services."
+            canonical="/refund"
+          />
           <h1>Refund Policy</h1>
           <p className="hero-subtitle">Our refund and cancellation terms for services</p>
         </div>

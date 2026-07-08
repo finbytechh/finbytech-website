@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Bot, Code, Globe, Smartphone, Cloud, Database, Settings, Layers, Users, Target, Zap, TrendingUp, ChartBar as BarChart, MessageCircle, Headphones as HeadphonesIcon, ArrowRight, CircleCheck as CheckCircle, Shield, Cpu } from 'lucide-react';
+import SEO from '../components/SEO';
 import './Services.css';
 
 const COMPANY = {
@@ -124,6 +125,11 @@ function Services() {
 
   return (
     <div className="services-page">
+      <SEO
+        title="IT Services - AI, Software, Web, Mobile, Cloud & Trading Technology"
+        description="Explore FINBYTECHNOVATION IT SOLUTIONS' full range of services: AI & Machine Learning, Custom Software Development, Web & Mobile App Development, Digital Marketing, Cloud Services, API Integration, Trading Technology, CRM, ERP, and more."
+        canonical="/services"
+      />
       {/* Hero */}
       <section className="page-hero">
         <div className="container">

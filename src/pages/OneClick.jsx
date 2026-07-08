@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Zap, Shield, Globe, Users, ChartBar as BarChart, Clock, ArrowRight, CircleCheck as CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 import './OneClick.css';
 
 function OneClick() {
@@ -40,6 +41,11 @@ function OneClick() {
 
   return (
     <div className="oneclick-page">
+      <SEO
+        title="OneClick Trading - Algorithmic Trading Platform"
+        description="OneClick Trading by FINBYTECHNOVATION IT SOLUTIONS - Advanced algorithmic trading platform with API bridge, automated execution, multi-broker support, and real-time strategy management."
+        canonical="/oneclick"
+      />
       <section className="page-hero">
         <div className="container">
           <h1>1Click Trading Platform</h1>

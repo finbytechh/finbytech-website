@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Check, Star, Zap, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import './Pricing.css';
 
 function Pricing() {
@@ -56,6 +57,11 @@ function Pricing() {
 
   return (
     <div className="pricing-page">
+      <SEO
+        title="Pricing - Transparent IT Service Plans & Packages"
+        description="Explore FINBYTECHNOVATION IT SOLUTIONS' transparent pricing plans for web development, mobile apps, digital marketing, trading technology, and more. Custom enterprise quotes available."
+        canonical="/pricing"
+      />
       <section className="page-hero">
         <div className="container">
           <h1>Pricing Plans</h1>

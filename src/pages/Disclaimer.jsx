@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import './Legal.css';
 
 const COMPANY = {
@@ -13,6 +14,11 @@ function Disclaimer() {
       <section className="page-hero">
         <div className="container">
           <span className="page-label">Legal</span>
+          <SEO
+            title="Disclaimer"
+            description="Read the Disclaimer for FINBYTECHNOVATION IT SOLUTIONS. Important notices regarding trading technology, financial services, intellectual property, and limitation of liability."
+            canonical="/disclaimer"
+          />
           <h1>Disclaimer</h1>
           <p className="hero-subtitle">Important notices regarding our services and products</p>
         </div>

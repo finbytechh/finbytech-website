@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Cpu, Code, Globe, Smartphone, Cloud, Zap, Database, Bot, Users, Shield, Award, Target, Heart, Video, Phone, CircleCheck as CheckCircle, TrendingUp, ChartBar as BarChart, Settings, MessageCircle, Layers, Headphones as HeadphonesIcon } from 'lucide-react';
+import SEO from '../components/SEO';
 import './Home.css';
 
 const COMPANY = {
@@ -69,6 +70,19 @@ function Home() {
 
   return (
     <div className="home-page">
+      <SEO
+        title="AI Solutions, Software Development, Web & Mobile Apps - India"
+        description="FINBYTECHNOVATION IT SOLUTIONS - Premier IT company in India offering AI Solutions, Software Development, Web & Mobile App Development, Digital Marketing, SEO, Cloud Services, and Algorithmic Trading Technology. CIN: U62013UP2024OPC213677."
+        canonical="/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "FINBYTECHNOVATION IT SOLUTIONS - Home",
+          "url": "https://finbytech.com/",
+          "description": "Premier IT company in India offering AI, software, web, mobile, digital marketing and trading technology solutions.",
+          "isPartOf": { "@type": "WebSite", "url": "https://finbytech.com" }
+        }}
+      />
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-bg">

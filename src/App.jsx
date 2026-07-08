@@ -15,6 +15,7 @@ import Cancellation from './pages/Cancellation';
 import Shipping from './pages/Shipping';
 import Grievance from './pages/Grievance';
 import Cookies from './pages/Cookies';
+import Blog from './pages/Blog';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import AIChatWidget from './components/AIChatWidget';
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/grievance" element={<Grievance />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </Layout>
       <FloatingWhatsApp />

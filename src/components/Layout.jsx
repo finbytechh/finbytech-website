@@ -67,7 +67,7 @@ function Layout({ children }) {
         <div className="container">
           <nav className="navbar">
             <Link to="/" className="logo">
-              <img src="/logo.svg" alt="Finbytechnovation IT Solutions" className="logo-img" />
+              <img src="/images/WhatsApp_Image_2025-09-17_at_1.01.42_AM.jpeg" alt="Finbytechnovation IT Solutions" className="logo-img" />
               <div className="logo-text">
                 <span className="logo-main">Finbytechnovation</span>
                 <span className="logo-sub">IT Solutions</span>
@@ -144,7 +144,7 @@ function Layout({ children }) {
             {/* Company Info */}
             <div className="footer-col footer-company">
               <div className="footer-logo">
-                <img src="/logo.svg" alt="Finbytechnovation" className="footer-logo-img" />
+                <img src="/images/WhatsApp_Image_2025-09-17_at_1.01.42_AM.jpeg" alt="Finbytechnovation" className="footer-logo-img" />
                 <div className="logo-text">
                   <span className="logo-main">Finbytechnovation</span>
                   <span className="logo-sub">IT Solutions</span>
