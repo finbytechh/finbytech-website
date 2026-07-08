@@ -1,51 +1,137 @@
 import './Legal.css';
 
+const COMPANY = {
+  name: 'FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED',
+  cin: 'U62013UP2024OPC213677',
+  email: 'care@finbytechnovation.in',
+  phone: '+91 95153 63772',
+  address: {
+    city: 'Jhansi City',
+    state: 'Uttar Pradesh'
+  }
+};
+
 function Terms() {
   return (
     <div className="legal-page">
       <section className="page-hero">
         <div className="container">
+          <span className="page-label">Legal</span>
           <h1>Terms and Conditions</h1>
+          <p className="hero-subtitle">Please read these terms carefully before using our services</p>
         </div>
       </section>
 
-      <section className="legal-content">
+      <section className="legal-content section">
         <div className="container">
-          <div className="legal-card">
-            <h2>Terms and Conditions</h2>
-            <p className="updated">Last Updated: January 2024</p>
+          <div className="legal-card glass-card">
+            <p className="effective-date"><strong>Effective Date:</strong> 20 December 2024</p>
 
-            <h3>1. Acceptance of Terms</h3>
-            <p>By accessing and using the services of Finbytechnovation IT Solutions (OPC) Pvt. Ltd., you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use our services.</p>
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By accessing and using the services of {COMPANY.name}, you agree to be bound by these
+              Terms and Conditions. If you do not agree with any part of these terms, you may not use our services.
+            </p>
 
-            <h3>2. Services</h3>
-            <p>We provide digital marketing, web development, mobile app development, API-based trading solutions, and related IT services. All services are subject to specific terms as agreed upon in individual contracts.</p>
+            <h2>2. Company Information</h2>
+            <p>
+              {COMPANY.name} is a {COMPANY.name.includes('OPC') ? 'One Person Company' : 'Private Limited Company'}
+              incorporated in India with CIN: {COMPANY.cin}. Our registered office is in {COMPANY.address.city},
+              {COMPANY.address.state}.
+            </p>
 
-            <h3>3. User Obligations</h3>
-            <p>Users must provide accurate information, maintain confidentiality of account credentials, and use services in compliance with applicable laws and regulations.</p>
+            <h2>3. Services</h2>
+            <p>
+              We provide AI Solutions, Software Development, Website Development, Mobile App Development,
+              Digital Marketing, SEO Services, Cloud Services, API Development, Business Automation,
+              Enterprise Solutions, CRM Development, ERP Development, UI/UX Design, Startup Consulting,
+              Trading Technology, and Custom SaaS Development. All services are subject to specific terms
+              as agreed upon in individual contracts or statements of work.
+            </p>
 
-            <h3>4. Intellectual Property</h3>
-            <p>All content, trademarks, and intellectual property displayed on our platforms are owned by Finbytechnovation IT Solutions or licensed to us. Unauthorized use is prohibited.</p>
+            <h2>4. User Obligations</h2>
+            <p>Users agree to:</p>
+            <ul>
+              <li>Provide accurate and complete information</li>
+              <li>Maintain confidentiality of account credentials</li>
+              <li>Use services in compliance with applicable laws</li>
+              <li>Not engage in any activity that interferes with service operations</li>
+              <li>Not attempt to reverse engineer or duplicate our proprietary technology</li>
+            </ul>
 
-            <h3>5. Limitation of Liability</h3>
-            <p>Finbytechnovation IT Solutions shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our services. Use of our algorithmic trading software does not guarantee profits.</p>
+            <h2>5. Intellectual Property</h2>
+            <p>
+              All content, trademarks, software code, designs, and intellectual property displayed on our
+              platforms or delivered as part of our services remain the property of {COMPANY.name} or our
+              licensors, unless otherwise agreed in writing. Custom work product ownership is transferred
+              only upon full payment and as specified in the project agreement.
+            </p>
 
-            <h3>6. Payment Terms</h3>
-            <p>All payments are due as specified in the service agreement. Refunds are governed by our Refund Policy.</p>
+            <h2>6. Payment Terms</h2>
+            <p>
+              All payments are due as specified in service agreements or invoices. We accept payment via
+              bank transfer, UPI, credit/debit cards, and approved payment gateways. Late payments may
+              incur interest charges. Refunds are governed by our Refund Policy.
+            </p>
 
-            <h3>7. Termination</h3>
-            <p>We reserve the right to suspend or terminate access to services for violation of these terms or for any other reason at our discretion.</p>
+            <h2>7. Service Delivery</h2>
+            <p>
+              Project timelines and deliverables are estimates based on information provided. Delays caused
+              by client-side dependencies, scope changes, or factors beyond our control may extend timelines.
+              We will communicate any material changes promptly.
+            </p>
 
-            <h3>8. Governing Law</h3>
-            <p>These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Jaipur, Rajasthan.</p>
+            <h2>8. Limitation of Liability</h2>
+            <p>
+              {COMPANY.name} shall not be liable for any indirect, incidental, special, or consequential
+              damages arising from the use of our services. Our total liability shall not exceed the amount
+              paid by the client for the specific service giving rise to the claim.
+            </p>
 
-            <h3>9. Intense Dating</h3>
-            <p>Intense Dating is developed, owned and operated by Finbytechnovation IT Solutions (OPC) Pvt. Ltd. For support, visit <a href="https://intensedating.in/" target="_blank" rel="noopener noreferrer">intensedating.in</a> or WhatsApp: <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer">+91 95153 63772</a>.</p>
+            <h2>9. Trading Technology Disclaimer</h2>
+            <p>
+              Use of our algorithmic trading software does not guarantee any specific results or profits.
+              Past performance is not indicative of future results. Financial markets involve inherent risks.
+              Users are solely responsible for their trading decisions and outcomes.
+            </p>
 
-            <h3>10. Contact</h3>
-            <p>For questions about these Terms, contact us at:</p>
-            <p>Email: <a href="mailto:care@finbytechnovation.in">care@finbytechnovation.in</a></p>
-            <p>Phone: <a href="tel:+919515363772">+91 95153 63772</a></p>
+            <h2>10. Confidentiality</h2>
+            <p>
+              Both parties agree to maintain the confidentiality of proprietary information shared during
+              the engagement. This obligation survives termination of services.
+            </p>
+
+            <h2>11. Termination</h2>
+            <p>
+              Either party may terminate services as specified in the service agreement. We reserve the
+              right to suspend or terminate access for violation of these terms. Upon termination,
+              all outstanding payments become immediately due.
+            </p>
+
+            <h2>12. Governing Law and Jurisdiction</h2>
+            <p>
+              These terms are governed by the laws of India. Any disputes shall be subject to the exclusive
+              jurisdiction of courts in {COMPANY.address.city}, {COMPANY.address.state}.
+            </p>
+
+            <h2>13. Intense Dating</h2>
+            <p>
+              Intense Dating is developed, owned, and operated by {COMPANY.name}.
+              For support, visit <a href="https://intensedating.in/" target="_blank" rel="noopener noreferrer">intensedating.in</a> or
+              WhatsApp: <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer">+91 95153 63772</a>.
+            </p>
+
+            <h2>14. Contact</h2>
+            <p>For questions about these Terms, contact us:</p>
+            <ul className="contact-list">
+              <li>Email: {COMPANY.email}</li>
+              <li>Phone: {COMPANY.phone}</li>
+            </ul>
+
+            <p className="company-footer">
+              {COMPANY.name}<br />
+              CIN: {COMPANY.cin}
+            </p>
           </div>
         </div>
       </section>

@@ -11,6 +11,10 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Refund from './pages/Refund';
 import Disclaimer from './pages/Disclaimer';
+import Cancellation from './pages/Cancellation';
+import Shipping from './pages/Shipping';
+import Grievance from './pages/Grievance';
+import Cookies from './pages/Cookies';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import AIChatWidget from './components/AIChatWidget';
 
@@ -30,6 +34,10 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/refund" element={<Refund />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/cancellation" element={<Cancellation />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/grievance" element={<Grievance />} />
+          <Route path="/cookies" element={<Cookies />} />
         </Routes>
       </Layout>
       <FloatingWhatsApp />

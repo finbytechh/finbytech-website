@@ -1,58 +1,140 @@
 import './Legal.css';
 
+const COMPANY = {
+  name: 'FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED',
+  cin: 'U62013UP2024OPC213677',
+  email: 'care@finbytechnovation.in',
+  phone: '+91 95153 63772'
+};
+
 function Privacy() {
   return (
     <div className="legal-page">
       <section className="page-hero">
         <div className="container">
+          <span className="page-label">Legal</span>
           <h1>Privacy Policy</h1>
+          <p className="hero-subtitle">How we collect, use, and protect your personal information</p>
         </div>
       </section>
 
-      <section className="legal-content">
+      <section className="legal-content section">
         <div className="container">
-          <div className="legal-card">
-            <h2>Privacy Policy</h2>
-            <p className="updated">Last Updated: January 2024</p>
+          <div className="legal-card glass-card">
+            <p className="effective-date"><strong>Effective Date:</strong> 20 December 2024</p>
 
-            <h3>Information We Collect</h3>
-            <p>We collect information you provide directly to us, including name, email, phone number, and payment information when you make a purchase or register for our services.</p>
+            <h2>1. Introduction</h2>
+            <p>
+              {COMPANY.name} ("we", "us", or "our") is committed to protecting the privacy of our clients,
+              users, and visitors. This Privacy Policy explains how we collect, use, disclose, and safeguard
+              your information when you use our services or visit our websites.
+            </p>
 
-            <h3>Device Information</h3>
-            <p>We automatically collect certain information about your device, including web browser type, IP address, time zone, and cookies installed on your device.</p>
+            <h2>2. Information We Collect</h2>
 
-            <h3>How We Use Your Information</h3>
-            <p>We use the information we collect to:</p>
-            <ul className="legal-list">
-              <li>Fulfill orders and provide services</li>
-              <li>Communicate with you</li>
-              <li>Screen for fraud and risk</li>
-              <li>Improve our services and website</li>
-              <li>Display information using third party apps</li>
-              <li>Set up your accounts with our products</li>
+            <h3>Personal Information</h3>
+            <p>We collect information you provide directly to us, including:</p>
+            <ul>
+              <li>Name and contact information (email, phone, address)</li>
+              <li>Company name and business details</li>
+              <li>Account credentials</li>
+              <li>Payment and billing information</li>
+              <li>Project requirements and communications</li>
             </ul>
 
-            <h3>Sharing Your Information</h3>
-            <p>We may share your information with service providers who assist in our operations, as required by law, or in connection with a business transfer.</p>
+            <h3>Automatically Collected Information</h3>
+            <p>When you use our services, we automatically collect:</p>
+            <ul>
+              <li>Device information and browser type</li>
+              <li>IP address and location data</li>
+              <li>Usage patterns and features accessed</li>
+              <li>Cookies and similar tracking technologies</li>
+            </ul>
 
-            <h3>Cookies</h3>
-            <p>We use cookies to enhance your experience. You can disable cookies in your browser settings.</p>
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+              <li>Provide, maintain, and improve our services</li>
+              <li>Process transactions and send related information</li>
+              <li>Communicate with you about updates, services, and support</li>
+              <li>Personalize your experience and provide recommendations</li>
+              <li>Detect, prevent, and address technical issues and fraud</li>
+              <li>Comply with legal obligations</li>
+            </ul>
 
-            <h3>Data Security</h3>
-            <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or destruction.</p>
+            <h2>4. Information Sharing</h2>
+            <p>We may share your information with:</p>
+            <ul>
+              <li>Service providers who assist in our operations (hosting, payment processing, analytics)</li>
+              <li>Professional advisors (lawyers, accountants) under confidentiality obligations</li>
+              <li>Law enforcement or regulators when required by law</li>
+              <li>Business partners with your consent</li>
+            </ul>
+            <p>We do not sell your personal information to third parties.</p>
 
-            <h3>Your Rights</h3>
-            <p>You have the right to access, correct, or delete your personal information. Contact us to exercise these rights.</p>
+            <h2>5. Data Security</h2>
+            <p>
+              We implement appropriate technical and organizational measures to protect your personal
+              information, including encryption, secure servers, access controls, and regular security
+              assessments. However, no method of transmission over the Internet is 100% secure.
+            </p>
 
-            <h3>Third-Party Services</h3>
-            <p>Our website may contain links to third-party services. We are not responsible for their privacy practices.</p>
+            <h2>6. Data Retention</h2>
+            <p>
+              We retain your information for as long as necessary to provide services, comply with legal
+              obligations, resolve disputes, and enforce agreements. Upon request, we will delete your
+              information unless retention is required by law.
+            </p>
 
-            <h3>Intense Dating</h3>
-            <p>Intense Dating is developed, owned and operated by Finbytechnovation IT Solutions (OPC) Pvt. Ltd. For support, visit <a href="https://intensedating.in/" target="_blank" rel="noopener noreferrer">intensedating.in</a> or WhatsApp: <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer">+91 95153 63772</a>.</p>
+            <h2>7. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Access your personal information</li>
+              <li>Correct inaccurate information</li>
+              <li>Request deletion of your information</li>
+              <li>Object to processing and request restrictions</li>
+              <li>Data portability</li>
+              <li>Withdraw consent at any time</li>
+            </ul>
+            <p>To exercise these rights, contact us at {COMPANY.email}.</p>
 
-            <h3>Contact</h3>
-            <p>For privacy-related inquiries, contact us at:</p>
-            <p>Email: <a href="mailto:care@finbytechnovation.in">care@finbytechnovation.in</a></p>
+            <h2>8. Third-Party Links</h2>
+            <p>
+              Our websites may contain links to third-party services. We are not responsible for their
+              privacy practices. We encourage you to read their privacy policies.
+            </p>
+
+            <h2>9. Children's Privacy</h2>
+            <p>
+              Our services are not directed to individuals under 18. We do not knowingly collect personal
+              information from children. If you believe we have collected such information, please contact us.
+            </p>
+
+            <h2>10. Intense Dating</h2>
+            <p>
+              Intense Dating is developed, owned, and operated by {COMPANY.name}.
+              The Intense Dating app has its own privacy policy governing user data within the app.
+              For support, visit <a href="https://intensedating.in/" target="_blank" rel="noopener noreferrer">intensedating.in</a> or
+              WhatsApp: <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer">+91 95153 63772</a>.
+            </p>
+
+            <h2>11. Updates to This Policy</h2>
+            <p>
+              We may update this policy periodically. Changes will be posted on this page with an updated
+              effective date. Continued use of our services constitutes acceptance of any changes.
+            </p>
+
+            <h2>12. Contact</h2>
+            <p>For privacy-related inquiries:</p>
+            <ul className="contact-list">
+              <li>Email: {COMPANY.email}</li>
+              <li>Phone: {COMPANY.phone}</li>
+            </ul>
+
+            <p className="company-footer">
+              {COMPANY.name}<br />
+              CIN: {COMPANY.cin}
+            </p>
           </div>
         </div>
       </section>

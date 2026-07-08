@@ -1,219 +1,330 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Smartphone, TrendingUp, Globe, Users, Zap, Shield, Award, Heart, Video, Phone, CircleCheck as CheckCircle } from 'lucide-react';
+import { ArrowRight, Cpu, Code, Globe, Smartphone, Cloud, Zap, Database, Bot, Users, Shield, Award, Target, Heart, Video, Phone, CircleCheck as CheckCircle, TrendingUp, ChartBar as BarChart, Settings, MessageCircle, Layers, Headphones as HeadphonesIcon } from 'lucide-react';
 import './Home.css';
+
+const COMPANY = {
+  name: 'FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED',
+  address: 'C/o R D Ghanshyam Das, 29, Daru Bhondela, Jhansi City, Uttar Pradesh - 284002, India'
+};
 
 function Home() {
   const services = [
-    {
-      icon: <Code size={32} />,
-      title: "Web Development",
-      description: "Custom websites and web applications built with modern technologies for optimal performance and user experience."
-    },
-    {
-      icon: <Smartphone size={32} />,
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android that deliver exceptional user experiences."
-    },
-    {
-      icon: <TrendingUp size={32} />,
-      title: "Digital Marketing",
-      description: "Data-driven marketing strategies including SEO, PPC, social media, and content marketing to grow your business."
-    },
-    {
-      icon: <Globe size={32} />,
-      title: "API Bridge Trading",
-      description: "Automated trading solutions connecting your demat account via API Bridge with pre-loaded strategies."
-    },
-    {
-      icon: <Users size={32} />,
-      title: "Brand Building",
-      description: "Complete brand identity development including logo design, messaging, and visual identity systems."
-    },
-    {
-      icon: <Zap size={32} />,
-      title: "1Click Platform",
-      description: "Our flagship automated trading platform supporting major brokers with fully automated execution."
-    }
+    { icon: <Bot size={28} />, title: 'AI Solutions', desc: 'Advanced artificial intelligence and machine learning solutions for intelligent automation.' },
+    { icon: <Code size={28} />, title: 'Software Development', desc: 'Custom software solutions built with modern technologies and best practices.' },
+    { icon: <Globe size={28} />, title: 'Website Development', desc: 'High-performance websites and web applications that drive results.' },
+    { icon: <Smartphone size={28} />, title: 'Mobile App Development', desc: 'Native and cross-platform mobile applications for iOS and Android.' },
+    { icon: <TrendingUp size={28} />, title: 'Digital Marketing', desc: 'Data-driven marketing strategies to grow your brand and reach.' },
+    { icon: <BarChart size={28} />, title: 'SEO Services', desc: 'Search engine optimization to improve visibility and organic traffic.' },
+    { icon: <Cloud size={28} />, title: 'Cloud Services', desc: 'Scalable cloud infrastructure and migration services.' },
+    { icon: <Database size={28} />, title: 'API Development', desc: 'Robust API integrations connecting systems seamlessly.' },
+    { icon: <Settings size={28} />, title: 'Business Automation', desc: 'Streamline operations with intelligent automation solutions.' },
+    { icon: <Layers size={28} />, title: 'Enterprise Solutions', desc: 'Comprehensive enterprise software for large organizations.' },
+    { icon: <Users size={28} />, title: 'CRM Development', desc: 'Custom CRM solutions tailored to your business needs.' },
+    { icon: <Database size={28} />, title: 'ERP Development', desc: 'Integrated ERP systems for operational excellence.' },
+    { icon: <Target size={28} />, title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces that users love.' },
+    { icon: <MessageCircle size={28} />, title: 'Startup Consulting', desc: 'Strategic guidance for startups from idea to launch.' },
+    { icon: <Zap size={28} />, title: 'Trading Technology', desc: 'Advanced trading platforms and algorithmic solutions.' },
+    { icon: <Layers size={28} />, title: 'Custom SaaS', desc: 'Software as a Service platforms built to scale.' },
   ];
 
-  const intenseDatingFeatures = [
-    { icon: <Heart size={20} />, text: "Private Chat" },
-    { icon: <Video size={20} />, text: "Video Calling" },
-    { icon: <Phone size={20} />, text: "Voice Calling" },
-    { icon: <CheckCircle size={20} />, text: "Verified Profiles" },
-    { icon: <Zap size={20} />, text: "AI Matchmaking" },
-    { icon: <Award size={20} />, text: "Premium Membership" }
+  const industries = [
+    'Financial Services', 'Healthcare', 'E-Commerce', 'Real Estate',
+    'Education', 'Logistics', 'Manufacturing', 'Retail'
   ];
 
-  const stats = [
-    { value: "100+", label: "Clients Served" },
-    { value: "200+", label: "Projects Delivered" },
-    { value: "5+", label: "Years Experience" },
-    { value: "24/7", label: "Support Available" }
+  const technologies = [
+    'React', 'Node.js', 'Python', 'AWS', 'Azure', 'Google Cloud',
+    'TensorFlow', 'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB', 'Redis'
+  ];
+
+  const processSteps = [
+    { num: '01', title: 'Discovery', desc: 'Understanding your requirements and business goals.' },
+    { num: '02', title: 'Strategy', desc: 'Crafting a comprehensive solution architecture.' },
+    { num: '03', title: 'Development', desc: 'Building your solution with cutting-edge technology.' },
+    { num: '04', title: 'Testing', desc: 'Rigorous quality assurance and performance testing.' },
+    { num: '05', title: 'Deployment', desc: 'Seamless launch with zero downtime deployment.' },
+    { num: '06', title: 'Support', desc: 'Ongoing maintenance and continuous improvements.' },
+  ];
+
+  const testimonials = [
+    { name: 'Tech Corp', text: 'Exceptional team that delivered beyond our expectations. Their AI solutions transformed our operations.' },
+    { name: 'Finance Hub', text: 'Professional, innovative, and always on time. Finbytechnovation is our go-to technology partner.' },
+    { name: 'StartUp India', text: 'Their trading platform helped us scale from 0 to 10,000 users seamlessly.' },
+  ];
+
+  const faqs = [
+    { q: 'What services does Finbytechnovation offer?', a: 'We offer AI Solutions, Software Development, Web Development, Mobile Apps, Cloud Services, Digital Marketing, and Enterprise Solutions.' },
+    { q: 'Where is Finbytechnovation located?', a: 'Our registered office is in Jhansi City, Uttar Pradesh, India. We serve clients globally.' },
+    { q: 'What is Intense Dating?', a: 'Intense Dating is our flagship consumer dating app with AI Matchmaking, Private Chat, Video Calling, and Verified Profiles.' },
+  ];
+
+  const intenseFeatures = [
+    { icon: <Heart size={18} />, text: 'Private Chat' },
+    { icon: <Video size={18} />, text: 'Video Calling' },
+    { icon: <Phone size={18} />, text: 'Voice Calling' },
+    { icon: <CheckCircle size={18} />, text: 'Verified Profiles' },
+    { icon: <Zap size={18} />, text: 'AI Matchmaking' },
+    { icon: <Award size={18} />, text: 'Premium Membership' },
   ];
 
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero">
+        <div className="hero-bg">
+          <div className="hero-gradient"></div>
+          <div className="hero-grid"></div>
+        </div>
         <div className="container">
           <div className="hero-content">
-            <h1>Top Brands Trust Our Digital Services</h1>
+            <span className="hero-badge">AI-Powered Technology Company</span>
+            <h1>
+              Building the Future with
+              <span className="text-gradient"> Intelligence</span>
+            </h1>
             <p>
-              Finbytechnovation specializes in B2B and B2C solutions offering services in Mobile & Web application development,
-              website creation, digital marketing, and brand-building. We cater to diverse industries including financial & fintech,
-              securities markets, real estate, and e-commerce.
+              FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED is a technology company
+              focused on Artificial Intelligence, Software Development, Enterprise Solutions,
+              Cloud Technologies, and Digital Transformation.
             </p>
             <div className="hero-buttons">
               <Link to="/contact" className="btn btn-primary btn-lg">
-                Get Started <ArrowRight size={20} />
+                Start Your Project <ArrowRight size={18} />
               </Link>
-              <Link to="/services" className="btn btn-outline btn-lg" style={{ borderColor: 'white', color: 'white' }}>
-                Our Services
+              <Link to="/services" className="btn btn-secondary btn-lg">
+                Explore Services
               </Link>
+            </div>
+            <div className="hero-stats">
+              <div className="stat"><span className="stat-value">2024</span><span className="stat-label">Founded</span></div>
+              <div className="stat"><span className="stat-value">16+</span><span className="stat-label">Services</span></div>
+              <div className="stat"><span className="stat-value">1</span><span className="stat-label">Consumer Brand</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="stats-section">
+      {/* About Section */}
+      <section className="section about-section">
         <div className="container">
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
-                <div className="stat-value">{stat.value}</div>
-                <div className="stat-label">{stat.label}</div>
+          <div className="about-grid">
+            <div className="about-content">
+              <span className="section-label">About Us</span>
+              <h2>FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED</h2>
+              <p>
+                We are a technology company incorporated on 20 December 2024, focused on delivering
+                cutting-edge solutions in Artificial Intelligence, Software Development, Web Development,
+                Mobile Applications, Enterprise Solutions, Cloud Technologies, Digital Marketing,
+                API Integrations, Trading Technology, SaaS Platforms, and Business Automation.
+              </p>
+              <p>
+                Our mission is to empower businesses with innovative technology solutions that drive
+                growth, efficiency, and digital transformation. We combine technical excellence with
+                strategic thinking to deliver solutions that exceed expectations.
+              </p>
+              <Link to="/about" className="btn btn-primary">
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="about-visual">
+              <div className="visual-card animate-pulse-glow">
+                <Cpu size={80} />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Brands Section */}
-      <section className="brands-section">
+      {/* Why Choose Us */}
+      <section className="section why-section bg-secondary">
         <div className="container">
           <div className="section-header">
-            <h2>Our Brands</h2>
-            <p>Building products that make a difference</p>
+            <span className="section-label">Why Choose Us</span>
+            <h2>Technology Excellence, Delivered</h2>
+            <p>What sets us apart in building tomorrow's solutions today</p>
           </div>
-          <div className="brands-grid">
-            <div className="brand-card-main">
-              <div className="brand-icon">
-                <Heart size={40} />
-              </div>
-              <h3>Intense Dating</h3>
-              <p>
-                India's premium dating app featuring Private Chat, Video Calling, Voice Calling, Verified Profiles,
-                AI Matchmaking, and Premium Membership. Find your perfect match with meaningful connections.
-              </p>
-              <div className="brand-features">
-                {intenseDatingFeatures.map((feature, index) => (
-                  <div key={index} className="feature-tag">
-                    {feature.icon}
-                    <span>{feature.text}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="brand-buttons">
-                <a href="https://intensedating.in" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
-                  <Globe size={16} /> Visit Website
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.intense.app" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-sm">
-                  Download App
-                </a>
-                <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">
-                  WhatsApp Support
-                </a>
-              </div>
+          <div className="why-grid">
+            <div className="why-card glass-card card-hover">
+              <div className="why-icon"><Shield size={32} /></div>
+              <h4>Quality Assured</h4>
+              <p>Rigorous quality processes ensure flawless, production-ready deliverables.</p>
             </div>
-            <div className="brand-card-main brand-info">
-              <div className="brand-icon">
-                <Users size={40} />
-              </div>
-              <h3>A Product of Finbytechnovation IT Solutions</h3>
-              <p>
-                Intense Dating is developed, owned and operated by <strong>Finbytechnovation IT Solutions (OPC) Pvt. Ltd.</strong>
-              </p>
-              <p>
-                Our commitment to excellence extends beyond IT services to creating consumer products that enhance people's lives.
-                Intense Dating represents our entry into the consumer application market, bringing the same dedication to quality
-                and user experience that defines our enterprise solutions.
-              </p>
-              <Link to="/intense-dating" className="link-arrow">
-                Learn More About Intense Dating <ArrowRight size={16} />
-              </Link>
+            <div className="why-card glass-card card-hover">
+              <div className="why-icon"><Users size={32} /></div>
+              <h4>Expert Team</h4>
+              <p>Skilled professionals with deep expertise in cutting-edge technologies.</p>
+            </div>
+            <div className="why-card glass-card card-hover">
+              <div className="why-icon"><Zap size={32} /></div>
+              <h4>Fast Delivery</h4>
+              <p>Agile methodology ensures quick turnaround without compromising quality.</p>
+            </div>
+            <div className="why-card glass-card card-hover">
+              <div className="why-icon"><Award size={32} /></div>
+              <h4>Innovation First</h4>
+              <p>We continuously explore and adopt the latest technological advancements.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="services-section">
+      <section className="section services-section">
         <div className="container">
           <div className="section-header">
-            <h2>Our Services</h2>
-            <p>Comprehensive IT solutions tailored to your business needs</p>
+            <span className="section-label">Our Services</span>
+            <h2>Comprehensive Technology Solutions</h2>
+            <p>From AI to Enterprise Systems, we deliver excellence across the spectrum</p>
           </div>
           <div className="services-grid">
             {services.map((service, index) => (
-              <div key={index} className="service-card">
+              <div key={index} className="service-card glass-card card-hover">
                 <div className="service-icon">{service.icon}</div>
                 <h4>{service.title}</h4>
-                <p>{service.description}</p>
-                <Link to="/services" className="link-arrow">
-                  Learn More <ArrowRight size={16} />
-                </Link>
+                <p>{service.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="section-cta">
+            <Link to="/services" className="btn btn-primary btn-lg">
+              View All Services <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries & Technologies */}
+      <section className="section tech-section bg-secondary">
+        <div className="container">
+          <div className="tech-grid">
+            <div className="tech-col">
+              <span className="section-label">Industries</span>
+              <h3>Sectors We Serve</h3>
+              <div className="tech-tags">
+                {industries.map((ind, i) => <span key={i} className="tech-tag">{ind}</span>)}
+              </div>
+            </div>
+            <div className="tech-col">
+              <span className="section-label">Technologies</span>
+              <h3>Our Tech Stack</h3>
+              <div className="tech-tags">
+                {technologies.map((tech, i) => <span key={i} className="tech-tag">{tech}</span>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Brands - Intense Dating */}
+      <section className="section brands-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">Our Brands</span>
+            <h2>Consumer Innovation</h2>
+            <p>Building products that make a meaningful impact</p>
+          </div>
+          <div className="brand-showcase glass-card">
+            <div className="brand-content">
+              <div className="brand-icon animate-float"><Heart size={48} /></div>
+              <h3>Intense Dating</h3>
+              <p className="brand-tagline">Premium Dating App</p>
+              <p className="brand-desc">
+                India's premium dating application featuring Private Chat, Video Calling, Voice Calling,
+                Verified Profiles, AI Matchmaking, and Premium Membership. A flagship consumer platform
+                developed and operated by FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED.
+              </p>
+              <div className="brand-features">
+                {intenseFeatures.map((f, i) => (
+                  <div key={i} className="feature-badge">
+                    {f.icon}
+                    <span>{f.text}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="brand-cta">
+                <a href="https://intensedating.in" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  <Globe size={16} /> Visit Website
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.intense.app" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                  Download App
+                </a>
+                <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                  <Phone size={16} /> WhatsApp Support
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Development Process */}
+      <section className="section process-section bg-secondary">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">Our Process</span>
+            <h2>How We Build</h2>
+            <p>A structured approach to delivering excellence</p>
+          </div>
+          <div className="process-grid">
+            {processSteps.map((step, index) => (
+              <div key={index} className="process-card glass-card">
+                <span className="process-num">{step.num}</span>
+                <h4>{step.title}</h4>
+                <p>{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="why-section bg-secondary">
+      {/* Testimonials */}
+      <section className="section testimonials-section">
         <div className="container">
           <div className="section-header">
-            <h2>Why Choose Us</h2>
-            <p>What sets us apart from the competition</p>
+            <span className="section-label">Client Success</span>
+            <h2>What Our Clients Say</h2>
           </div>
-          <div className="why-grid">
-            <div className="why-card">
-              <div className="why-icon"><Shield size={32} /></div>
-              <h4>Quality Assured</h4>
-              <p>Rigorous testing and quality assurance processes ensure flawless deliverables.</p>
-            </div>
-            <div className="why-card">
-              <div className="why-icon"><Users size={32} /></div>
-              <h4>Expert Team</h4>
-              <p>Skilled professionals with expertise in cutting-edge technologies and methodologies.</p>
-            </div>
-            <div className="why-card">
-              <div className="why-icon"><Zap size={32} /></div>
-              <h4>Fast Delivery</h4>
-              <p>Agile development methodology ensures quick turnaround without compromising quality.</p>
-            </div>
-            <div className="why-card">
-              <div className="why-icon"><Award size={32} /></div>
-              <h4>Proven Track Record</h4>
-              <p>100+ satisfied clients across diverse industries testify to our reliability and excellence.</p>
-            </div>
+          <div className="testimonials-grid">
+            {testimonials.map((item, index) => (
+              <div key={index} className="testimonial-card glass-card">
+                <p>"{item.text}"</p>
+                <span className="testimonial-author">{item.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-section">
+      {/* FAQ */}
+      <section className="section faq-section bg-secondary">
         <div className="container">
-          <div className="cta-content">
+          <div className="section-header">
+            <span className="section-label">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div className="faq-grid">
+            {faqs.map((item, index) => (
+              <div key={index} className="faq-card glass-card">
+                <h4>{item.q}</h4>
+                <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="section cta-section">
+        <div className="container">
+          <div className="cta-content glass-card">
             <h2>Ready to Transform Your Business?</h2>
-            <p>Let's discuss how we can help you achieve your digital goals.</p>
+            <p>Let's discuss how we can help you achieve your technology goals.</p>
             <div className="cta-buttons">
               <Link to="/contact" className="btn btn-primary btn-lg">
-                Contact Us <ArrowRight size={20} />
+                Contact Us <ArrowRight size={18} />
               </Link>
-              <Link to="/pricing" className="btn btn-outline btn-lg" style={{ borderColor: 'white', color: 'white' }}>
-                View Pricing
+              <Link to="/about" className="btn btn-secondary btn-lg">
+                Learn More
               </Link>
             </div>
           </div>
