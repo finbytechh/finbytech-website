@@ -7,7 +7,7 @@ const COMPANY = {
   website: 'https://intensedating.in',
   playStore: 'https://play.google.com/store/apps/details?id=com.intense.app',
   whatsapp: 'https://wa.me/919515363772',
-  phone: '+91 95153 63772'
+  phone: '+91 96511 18519'
 };
 
 function IntenseDating() {
@@ -32,7 +32,7 @@ function IntenseDating() {
     { q: 'Is Intense Dating free to use?', a: 'Yes, Intense Dating is free to download and use. We also offer a Premium Membership with exclusive features for users who want an enhanced experience.' },
     { q: 'How are profiles verified?', a: 'We use multiple verification methods including phone number verification, photo verification, and optional identity verification to ensure all profiles are authentic.' },
     { q: 'Is my data safe?', a: 'Absolutely. We use end-to-end encryption for all messages, and your personal information is never shared with third parties without your consent.' },
-    { q: 'How do I contact support?', a: 'You can reach our support team via WhatsApp at +91 95153 63772 or visit intensedating.in for more information.' },
+    { q: 'How do I contact support?', a: 'You can reach our support team via WhatsApp at +91 96511 18519 or visit intensedating.in for more information.' },
     { q: 'Who owns Intense Dating?', a: 'Intense Dating is developed, owned, and operated by FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED, a technology company based in India.' }
   ];
 

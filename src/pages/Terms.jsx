@@ -3,8 +3,8 @@ import './Legal.css';
 const COMPANY = {
   name: 'FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED',
   cin: 'U62013UP2024OPC213677',
-  email: 'care@finbytechnovation.in',
-  phone: '+91 95153 63772',
+  email: 'legal@finbytech.com',
+  phone: '+91 96511 18519',
   address: {
     city: 'Jhansi City',
     state: 'Uttar Pradesh'
@@ -118,7 +118,7 @@ function Terms() {
             <p>
               Intense Dating is developed, owned, and operated by {COMPANY.name}.
               For support, visit <a href="https://intensedating.in/" target="_blank" rel="noopener noreferrer">intensedating.in</a> or
-              WhatsApp: <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer">+91 95153 63772</a>.
+              WhatsApp: <a href="https://wa.me/919515363772" target="_blank" rel="noopener noreferrer">+91 96511 18519</a>.
             </p>
 
             <h2>14. Contact</h2>

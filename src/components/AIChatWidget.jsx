@@ -29,7 +29,7 @@ function AIChatWidget() {
       return '1Click Platform is our automated trading solution that connects your demat account via API Bridge. It supports major brokers and offers fully automated trading with pre-loaded strategies. Contact us for a demo!';
     }
     if (msg.includes('contact') || msg.includes('phone') || msg.includes('email') || msg.includes('reach')) {
-      return 'You can reach us at: Email: care@finbytechnovation.in, WhatsApp: +91 95153 63772, Website: finbytech.com. Our team is available Monday-Saturday, 10am-7pm IST.';
+      return 'You can reach us at: Email: info@finbytech.com, Phone: +91 96511 18519, Website: finbytech.com. Our team is available Monday-Saturday, 10am-7pm IST.';
     }
     if (msg.includes('price') || msg.includes('cost') || msg.includes('pricing')) {
       return 'We have flexible pricing plans: Starter (INR 12,999/30 days), Quarterly (INR 33,999/90 days), and Premium (INR 64,999/180 days). Visit Pricing page for detailed features!';
@@ -43,7 +43,7 @@ function AIChatWidget() {
     if (msg.includes('thank')) {
       return "You're welcome! Is there anything else I can help you with? We're here to assist you 24/7.";
     }
-    return "Thanks for your message! Our team specializes in IT Solutions, API Trading Platforms, and Dating Apps (Intense Dating). For specific queries, please contact us at care@finbytechnovation.in or WhatsApp +91 95153 63772.";
+    return "Thanks for your message! Our team specializes in IT Solutions, Trading Platforms, and Consumer Apps. For specific queries, contact us at info@finbytech.com or call +91 96511 18519.";
   };
 
   const sendMessage = (text = input) => {

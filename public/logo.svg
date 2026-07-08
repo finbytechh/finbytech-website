@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" fill="none">
+  <!-- Circle background -->
+  <circle cx="200" cy="180" r="170" fill="#1a4fa0"/>
+
+  <!-- Bar chart bars -->
+  <!-- Bar 1 (leftmost, medium height, lighter blue) -->
+  <rect x="90" y="140" width="38" height="80" rx="4" fill="#5b8dd9"/>
+  <!-- Bar 2 (short, lighter blue) -->
+  <rect x="142" y="155" width="38" height="65" rx="4" fill="#5b8dd9"/>
+  <!-- Bar 3 (medium, white) -->
+  <rect x="194" y="125" width="38" height="95" rx="4" fill="white"/>
+  <!-- Bar 4 (tall, white) -->
+  <rect x="246" y="90" width="38" height="130" rx="4" fill="white"/>
+
+  <!-- Trending arrow line -->
+  <!-- Arrow path: starts bottom-left, goes up-right with a W-shape tick -->
+  <polyline
+    points="80,230 130,175 165,200 215,145 290,90"
+    stroke="white"
+    stroke-width="14"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"/>
+  <!-- Arrow head -->
+  <polygon points="290,90 255,95 275,120" fill="white"/>
+
+  <!-- Company name text -->
+  <text x="200" y="390"
+    font-family="Arial, sans-serif"
+    font-size="52"
+    font-weight="900"
+    fill="#1a4fa0"
+    text-anchor="middle"
+    letter-spacing="2">FINBYTECH</text>
+  <text x="200" y="415"
+    font-family="Arial, sans-serif"
+    font-size="18"
+    font-weight="500"
+    fill="#4a6fa0"
+    text-anchor="middle"
+    letter-spacing="6">IT SOLUTIONS</text>
+</svg>

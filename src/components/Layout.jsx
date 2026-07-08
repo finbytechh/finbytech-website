@@ -17,8 +17,9 @@ const COMPANY = {
     pincode: '284002',
     country: 'India'
   },
-  email: 'care@finbytechnovation.in',
-  phone: '+91 95153 63772',
+  email: 'info@finbytech.com',
+  support: 'support@finbytech.com',
+  phone: '+91 96511 18519',
   website: 'https://finbytech.com'
 };
 
@@ -40,12 +41,12 @@ function Layout({ children }) {
   }, [location]);
 
   const services = [
-    { name: 'AI Solutions', path: '/services#ai' },
-    { name: 'Software Development', path: '/services#software' },
-    { name: 'Web Development', path: '/services#web' },
-    { name: 'Mobile Apps', path: '/services#mobile' },
-    { name: 'Cloud Services', path: '/services#cloud' },
-    { name: 'API Development', path: '/services#api' },
+    { name: 'AI Solutions', path: '/services' },
+    { name: 'Software Development', path: '/services' },
+    { name: 'Web Development', path: '/services' },
+    { name: 'Mobile Apps', path: '/services' },
+    { name: 'Cloud Services', path: '/services' },
+    { name: 'Trading Technology', path: '/services' },
   ];
 
   const legal = [
@@ -66,9 +67,7 @@ function Layout({ children }) {
         <div className="container">
           <nav className="navbar">
             <Link to="/" className="logo">
-              <div className="logo-icon">
-                <span>F</span>
-              </div>
+              <img src="/logo.svg" alt="Finbytechnovation IT Solutions" className="logo-img" />
               <div className="logo-text">
                 <span className="logo-main">Finbytechnovation</span>
                 <span className="logo-sub">IT Solutions</span>
@@ -126,7 +125,7 @@ function Layout({ children }) {
               </li>
             </ul>
 
-            <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </nav>
@@ -145,7 +144,7 @@ function Layout({ children }) {
             {/* Company Info */}
             <div className="footer-col footer-company">
               <div className="footer-logo">
-                <div className="logo-icon"><span>F</span></div>
+                <img src="/logo.svg" alt="Finbytechnovation" className="footer-logo-img" />
                 <div className="logo-text">
                   <span className="logo-main">Finbytechnovation</span>
                   <span className="logo-sub">IT Solutions</span>
@@ -184,7 +183,8 @@ function Layout({ children }) {
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/services">Services</Link></li>
                 <li><Link to="/intense-dating">Intense Dating</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
+                <li><Link to="/blog">Blog</Link></li>
               </ul>
             </div>
 
@@ -192,12 +192,12 @@ function Layout({ children }) {
             <div className="footer-col">
               <h4>Services</h4>
               <ul className="footer-links">
-                <li><Link to="/services#ai">AI Solutions</Link></li>
-                <li><Link to="/services#software">Software Development</Link></li>
-                <li><Link to="/services#web">Website Development</Link></li>
-                <li><Link to="/services#mobile">Mobile Apps</Link></li>
-                <li><Link to="/services#cloud">Cloud Services</Link></li>
-                <li><Link to="/services#marketing">Digital Marketing</Link></li>
+                <li><Link to="/services">AI Solutions</Link></li>
+                <li><Link to="/services">Software Development</Link></li>
+                <li><Link to="/services">Website Development</Link></li>
+                <li><Link to="/services">Mobile Apps</Link></li>
+                <li><Link to="/services">Cloud Services</Link></li>
+                <li><Link to="/services">Digital Marketing</Link></li>
               </ul>
             </div>
 
@@ -207,7 +207,7 @@ function Layout({ children }) {
               <div className="footer-brand">
                 <span className="brand-title">Intense Dating</span>
                 <span className="brand-tagline">Premium Dating App</span>
-                <p>A flagship consumer platform developed and operated by FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED.</p>
+                <p>A flagship consumer platform developed and operated by {COMPANY.name}.</p>
                 <div className="brand-cta">
                   <a href="https://intensedating.in" target="_blank" rel="noopener noreferrer">Visit Website</a>
                   <span>|</span>
@@ -221,7 +221,7 @@ function Layout({ children }) {
             <div className="footer-col">
               <h4>Legal</h4>
               <ul className="footer-links">
-                {legal.slice(0, 6).map((item, i) => (
+                {legal.map((item, i) => (
                   <li key={i}><Link to={item.path}>{item.name}</Link></li>
                 ))}
               </ul>
@@ -229,21 +229,27 @@ function Layout({ children }) {
 
             {/* Contact */}
             <div className="footer-col">
-              <h4>Contact</h4>
+              <h4>Contact Us</h4>
               <ul className="footer-contact">
                 <li>
                   <Phone size={16} />
-                  <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`}>{COMPANY.phone}</a>
+                  <a href="tel:+919651118519">{COMPANY.phone}</a>
                 </li>
                 <li>
                   <Mail size={16} />
                   <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
                 </li>
                 <li>
+                  <Mail size={16} />
+                  <a href={`mailto:${COMPANY.support}`}>{COMPANY.support}</a>
+                </li>
+                <li>
                   <MapPin size={16} />
-                  <span>Registered Office:<br />
-                    {COMPANY.address.line1}, {COMPANY.address.line2}, {COMPANY.address.city},<br />
-                    {COMPANY.address.state} - {COMPANY.address.pincode}, {COMPANY.address.country}
+                  <span>
+                    {COMPANY.address.line1}, {COMPANY.address.line2},<br />
+                    {COMPANY.address.city}, {COMPANY.address.district},<br />
+                    {COMPANY.address.state} - {COMPANY.address.pincode},<br />
+                    {COMPANY.address.country}
                   </span>
                 </li>
               </ul>
@@ -252,7 +258,7 @@ function Layout({ children }) {
 
           <div className="footer-bottom">
             <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All Rights Reserved.</p>
-            <p className="footer-tagline">A Product of FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED</p>
+            <p className="footer-tagline">CIN: {COMPANY.cin} | Incorporated: {COMPANY.incorporated}</p>
           </div>
         </div>
       </footer>

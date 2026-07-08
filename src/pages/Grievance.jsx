@@ -3,8 +3,8 @@ import './Legal.css';
 const COMPANY = {
   name: 'FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED',
   cin: 'U62013UP2024OPC213677',
-  email: 'care@finbytechnovation.in',
-  phone: '+91 95153 63772',
+  email: 'grievance@finbytech.com',
+  phone: '+91 96511 18519',
   address: {
     line1: 'C/o R D Ghanshyam Das',
     line2: '29, Daru Bhondela',

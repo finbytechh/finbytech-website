@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Headphones as HeadphonesIcon, Building, Globe, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Building, Globe, ArrowRight, CircleCheck as CheckCircle, CircleAlert as AlertCircle, Loader } from 'lucide-react';
 import './Contact.css';
 
 const COMPANY = {
@@ -16,8 +16,10 @@ const COMPANY = {
     pincode: '284002',
     country: 'India'
   },
-  email: 'care@finbytechnovation.in',
-  phone: '+91 95153 63772',
+  email: 'info@finbytech.com',
+  support: 'support@finbytech.com',
+  sales: 'sales@finbytech.com',
+  phone: '+91 96511 18519',
   whatsapp: 'https://wa.me/919515363772',
   website: 'https://finbytech.com',
   hours: {
@@ -26,26 +28,24 @@ const COMPANY = {
   }
 };
 
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+const INITIAL_FORM = {
+  name: '',
+  email: '',
+  phone: '',
+  company: '',
+  subject: '',
+  inquiryType: 'general',
+  message: ''
+};
+
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    subject: '',
-    inquiryType: 'general',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you within 24 hours.');
-    setFormData({ name: '', email: '', phone: '', company: '', subject: '', inquiryType: 'general', message: '' });
-  };
+  const [formData, setFormData] = useState(INITIAL_FORM);
+  const [errors, setErrors] = useState({});
+  const [submitState, setSubmitState] = useState('idle'); // idle | loading | success | error
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const inquiryTypes = [
     { value: 'general', label: 'General Inquiry' },
@@ -71,7 +71,7 @@ function Contact() {
       title: 'Call Us',
       subtitle: 'Speak with our team',
       details: [COMPANY.phone],
-      link: `tel:${COMPANY.phone.replace(/\s/g, '')}`,
+      link: 'tel:+919651118519',
       cta: 'Call Now'
     },
     {
@@ -83,6 +83,76 @@ function Contact() {
       cta: 'Start Chat'
     }
   ];
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Full name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+    }
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setSubmitState('loading');
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch(`${SUPABASE_URL}/functions/v1/contact-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Apikey': SUPABASE_ANON_KEY
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || null,
+          company: formData.company.trim() || null,
+          inquiry_type: formData.inquiryType,
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+          page_url: window.location.href
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || result.error) {
+        throw new Error(result.error || 'Failed to send your message');
+      }
+
+      setSubmitState('success');
+      setSubmitMessage(result.message || 'Your message has been received. We will get back to you within 24 hours.');
+      setFormData(INITIAL_FORM);
+      setErrors({});
+    } catch (err) {
+      setSubmitState('error');
+      setSubmitMessage(err.message || 'Something went wrong. Please try again or contact us directly at info@finbytech.com');
+    }
+  };
 
   return (
     <div className="contact-page">
@@ -100,7 +170,13 @@ function Contact() {
         <div className="container">
           <div className="methods-grid">
             {contactMethods.map((method, index) => (
-              <a key={index} href={method.link} target={method.link.startsWith('http') ? '_blank' : undefined} rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="method-card glass-card card-hover">
+              <a
+                key={index}
+                href={method.link}
+                target={method.link.startsWith('http') ? '_blank' : undefined}
+                rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="method-card glass-card card-hover"
+              >
                 <div className="method-icon">{method.icon}</div>
                 <div className="method-content">
                   <h3>{method.title}</h3>
@@ -129,9 +205,30 @@ function Contact() {
                 <h2>Business Inquiry Form</h2>
                 <p>Fill out the form below and our team will get back to you within 24 hours.</p>
               </div>
-              <form onSubmit={handleSubmit} className="contact-form glass-card">
+
+              {submitState === 'success' && (
+                <div className="form-feedback success-feedback">
+                  <CheckCircle size={24} />
+                  <div>
+                    <strong>Message Sent Successfully!</strong>
+                    <p>{submitMessage}</p>
+                  </div>
+                </div>
+              )}
+
+              {submitState === 'error' && (
+                <div className="form-feedback error-feedback">
+                  <AlertCircle size={24} />
+                  <div>
+                    <strong>Submission Failed</strong>
+                    <p>{submitMessage}</p>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="contact-form glass-card" noValidate>
                 <div className="form-row">
-                  <div className="form-group">
+                  <div className={`form-group ${errors.name ? 'has-error' : ''}`}>
                     <label htmlFor="name">Full Name *</label>
                     <input
                       type="text"
@@ -140,10 +237,11 @@ function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your full name"
-                      required
+                      autoComplete="name"
                     />
+                    {errors.name && <span className="field-error">{errors.name}</span>}
                   </div>
-                  <div className="form-group">
+                  <div className={`form-group ${errors.email ? 'has-error' : ''}`}>
                     <label htmlFor="email">Email Address *</label>
                     <input
                       type="email"
@@ -152,8 +250,9 @@ function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
-                      required
+                      autoComplete="email"
                     />
+                    {errors.email && <span className="field-error">{errors.email}</span>}
                   </div>
                 </div>
                 <div className="form-row">
@@ -166,6 +265,7 @@ function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 XXXXX XXXXX"
+                      autoComplete="tel"
                     />
                   </div>
                   <div className="form-group">
@@ -177,6 +277,7 @@ function Contact() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Your company"
+                      autoComplete="organization"
                     />
                   </div>
                 </div>
@@ -188,14 +289,13 @@ function Contact() {
                       name="inquiryType"
                       value={formData.inquiryType}
                       onChange={handleChange}
-                      required
                     >
                       {inquiryTypes.map(type => (
                         <option key={type.value} value={type.value}>{type.label}</option>
                       ))}
                     </select>
                   </div>
-                  <div className="form-group">
+                  <div className={`form-group ${errors.subject ? 'has-error' : ''}`}>
                     <label htmlFor="subject">Subject *</label>
                     <input
                       type="text"
@@ -204,11 +304,11 @@ function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="Brief subject line"
-                      required
                     />
+                    {errors.subject && <span className="field-error">{errors.subject}</span>}
                   </div>
                 </div>
-                <div className="form-group">
+                <div className={`form-group ${errors.message ? 'has-error' : ''}`}>
                   <label htmlFor="message">Message *</label>
                   <textarea
                     id="message"
@@ -217,11 +317,19 @@ function Contact() {
                     onChange={handleChange}
                     placeholder="Tell us about your project, requirements, or inquiry..."
                     rows={6}
-                    required
                   ></textarea>
+                  {errors.message && <span className="field-error">{errors.message}</span>}
                 </div>
-                <button type="submit" className="btn btn-primary btn-lg">
-                  <Send size={18} /> Send Message
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg submit-btn"
+                  disabled={submitState === 'loading'}
+                >
+                  {submitState === 'loading' ? (
+                    <><Loader size={18} className="spin" /> Sending...</>
+                  ) : (
+                    <><Send size={18} /> Send Message</>
+                  )}
                 </button>
               </form>
             </div>
@@ -260,20 +368,25 @@ function Contact() {
                   <p><strong>{COMPANY.hours.days}</strong></p>
                   <p className="hours-time">{COMPANY.hours.time}</p>
                 </div>
-                <p className="hours-note">We are closed on Sundays and public holidays.</p>
+                <p className="hours-note">Closed on Sundays and public holidays.</p>
               </div>
 
-              {/* Tech Support */}
-              <div className="sidebar-card glass-card support-card">
-                <div className="sidebar-icon"><HeadphonesIcon size={24} /></div>
-                <h3>Technical Support</h3>
-                <p>For existing clients requiring technical assistance:</p>
-                <div className="support-methods">
-                  <a href={`mailto:${COMPANY.email}`} className="support-link">
-                    <Mail size={16} /> {COMPANY.email}
+              {/* Email Contacts */}
+              <div className="sidebar-card glass-card">
+                <div className="sidebar-icon"><Mail size={24} /></div>
+                <h3>Email Addresses</h3>
+                <div className="email-list">
+                  <a href={`mailto:${COMPANY.email}`} className="email-item">
+                    <span className="email-label">General</span>
+                    <span className="email-addr">{COMPANY.email}</span>
                   </a>
-                  <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="support-link">
-                    <MessageCircle size={16} /> WhatsApp Support
+                  <a href={`mailto:${COMPANY.support}`} className="email-item">
+                    <span className="email-label">Support</span>
+                    <span className="email-addr">{COMPANY.support}</span>
+                  </a>
+                  <a href={`mailto:${COMPANY.sales}`} className="email-item">
+                    <span className="email-label">Sales</span>
+                    <span className="email-addr">{COMPANY.sales}</span>
                   </a>
                 </div>
               </div>
@@ -302,7 +415,7 @@ function Contact() {
           <div className="map-wrapper glass-card">
             <div className="map-placeholder">
               <MapPin size={48} />
-              <h3>Google Maps</h3>
+              <h3>Jhansi, Uttar Pradesh</h3>
               <p>29, Daru Bhondela, Jhansi City, Uttar Pradesh 284002, India</p>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=29+Daru+Bhondela+Jhansi+Uttar+Pradesh+284002+India"
@@ -317,7 +430,7 @@ function Contact() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* WhatsApp CTA */}
       <section className="section cta-section">
         <div className="container">
           <div className="cta-content glass-card">

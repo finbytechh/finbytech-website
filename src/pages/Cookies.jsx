@@ -3,8 +3,8 @@ import './Legal.css';
 const COMPANY = {
   name: 'FINBYTECHNOVATION IT SOLUTIONS (OPC) PRIVATE LIMITED',
   cin: 'U62013UP2024OPC213677',
-  email: 'care@finbytechnovation.in',
-  phone: '+91 95153 63772'
+  email: 'privacy@finbytech.com',
+  phone: '+91 96511 18519'
 };
 
 function Cookies() {

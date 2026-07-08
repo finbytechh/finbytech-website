@@ -389,6 +389,119 @@
   font-size: 18px;
 }
 
+/* Form Feedback */
+.form-feedback {
+  display: flex;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.success-feedback {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+.error-feedback {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.form-feedback svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.form-feedback strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.form-feedback p {
+  font-size: 14px;
+  margin: 0;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* Field Errors */
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.field-error {
+  display: block;
+  font-size: 12px;
+  color: var(--error);
+  margin-top: 6px;
+}
+
+/* Spinner */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Email List */
+.email-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.email-item:hover {
+  background: var(--primary);
+}
+
+.email-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.email-item:hover .email-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.email-addr {
+  font-size: 14px;
+  color: var(--primary-light);
+}
+
+.email-item:hover .email-addr {
+  color: white;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .methods-grid { grid-template-columns: 1fr; }
