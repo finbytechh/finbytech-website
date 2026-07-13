@@ -18,6 +18,7 @@ import Cookies from './pages/Cookies';
 import Blog from './pages/Blog';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import AIChatWidget from './components/AIChatWidget';
+import LeadPopup from './components/LeadPopup';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
       </Layout>
       <FloatingWhatsApp />
       <AIChatWidget />
+      <LeadPopup />
     </>
   );
 }
