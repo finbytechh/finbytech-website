@@ -244,7 +244,7 @@ Deno.serve(async (req: Request) => {
     const dateStr = now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
     // Send notification email via Resend
-    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    const resendApiKey = Deno.env.get("RESEND_API_KEY") || "re_QxGrTyVA_AyDKNZxqHJnSv3KXpXR554Vf";
     if (resendApiKey) {
       const emailHtml = buildEmailHtml({
         name: name.trim(),

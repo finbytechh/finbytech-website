@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Mail, MapPin, ExternalLink, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Mail, MapPin, ExternalLink, ArrowRight, CreditCard } from 'lucide-react';
 import './Layout.css';
 
 const COMPANY = {
@@ -121,6 +121,9 @@ function Layout({ children }) {
               <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link></li>
               <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
               <li className="nav-cta">
+                <a href="https://payments.cashfree.com/forms/fbtpro" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm" style={{ marginRight: '8px' }}>
+                  <CreditCard size={14} /> Pay Now
+                </a>
                 <Link to="/contact" className="btn btn-primary btn-sm">Get Started</Link>
               </li>
             </ul>
@@ -159,18 +162,34 @@ function Layout({ children }) {
                 <span className="badge">CIN: {COMPANY.cin}</span>
                 <span className="badge">Est. {COMPANY.incorporated.split(' ')[2]}</span>
               </div>
+
+              {/* Make Payment CTA */}
+              <a
+                href="https://payments.cashfree.com/forms/fbtpro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-payment-cta"
+                style={{ marginBottom: '16px' }}
+              >
+                <div className="pay-text">
+                  <span className="pay-label">Make Payment</span>
+                  <span className="pay-sub">Secure payment via Cashfree</span>
+                </div>
+                <CreditCard size={22} />
+              </a>
+
               <div className="social-links">
                 <a href="https://facebook.com/finbytech" target="_blank" rel="noopener noreferrer" title="Facebook">
-                  <ExternalLink size={18} />
+                  <ExternalLink size={16} />
                 </a>
                 <a href="https://instagram.com/finbytech01" target="_blank" rel="noopener noreferrer" title="Instagram">
-                  <ExternalLink size={18} />
+                  <ExternalLink size={16} />
                 </a>
                 <a href="https://linkedin.com/company/finbytech" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                  <ExternalLink size={18} />
+                  <ExternalLink size={16} />
                 </a>
                 <a href="https://twitter.com/finbytech" target="_blank" rel="noopener noreferrer" title="Twitter">
-                  <ExternalLink size={18} />
+                  <ExternalLink size={16} />
                 </a>
               </div>
             </div>
@@ -183,8 +202,14 @@ function Layout({ children }) {
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/services">Services</Link></li>
                 <li><Link to="/intense-dating">Intense Dating</Link></li>
+                <li><Link to="/pricing">Pricing</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
+                <li>
+                  <a href="https://payments.cashfree.com/forms/fbtpro" target="_blank" rel="noopener noreferrer">
+                    Make Payment
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -198,6 +223,7 @@ function Layout({ children }) {
                 <li><Link to="/services">Mobile Apps</Link></li>
                 <li><Link to="/services">Cloud Services</Link></li>
                 <li><Link to="/services">Digital Marketing</Link></li>
+                <li><Link to="/oneclick">1Click Trading</Link></li>
               </ul>
             </div>
 
@@ -209,11 +235,11 @@ function Layout({ children }) {
                 <span className="brand-tagline">Premium Dating App</span>
                 <p>A flagship consumer platform developed and operated by {COMPANY.name}.</p>
                 <div className="brand-cta">
-                  <a href="https://intensedating.in" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <a href="https://intensedating.in" target="_blank" rel="noopener noreferrer">Website</a>
                   <span>|</span>
                   <a href="https://play.google.com/store/apps/details?id=com.intense.app" target="_blank" rel="noopener noreferrer">Download App</a>
                 </div>
-                <Link to="/intense-dating" className="learn-more">Learn More <ArrowRight size={14} /></Link>
+                <Link to="/intense-dating" className="learn-more">Learn More <ArrowRight size={12} /></Link>
               </div>
             </div>
 
@@ -232,24 +258,23 @@ function Layout({ children }) {
               <h4>Contact Us</h4>
               <ul className="footer-contact">
                 <li>
-                  <Phone size={16} />
+                  <Phone size={14} />
                   <a href="tel:+919651118519">{COMPANY.phone}</a>
                 </li>
                 <li>
-                  <Mail size={16} />
+                  <Mail size={14} />
                   <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
                 </li>
                 <li>
-                  <Mail size={16} />
+                  <Mail size={14} />
                   <a href={`mailto:${COMPANY.support}`}>{COMPANY.support}</a>
                 </li>
                 <li>
-                  <MapPin size={16} />
+                  <MapPin size={14} />
                   <span>
                     {COMPANY.address.line1}, {COMPANY.address.line2},<br />
                     {COMPANY.address.city}, {COMPANY.address.district},<br />
-                    {COMPANY.address.state} - {COMPANY.address.pincode},<br />
-                    {COMPANY.address.country}
+                    {COMPANY.address.state} - {COMPANY.address.pincode}
                   </span>
                 </li>
               </ul>
@@ -258,7 +283,7 @@ function Layout({ children }) {
 
           <div className="footer-bottom">
             <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All Rights Reserved.</p>
-            <p className="footer-tagline">CIN: {COMPANY.cin} | Incorporated: {COMPANY.incorporated}</p>
+            <p>CIN: {COMPANY.cin} | Incorporated: {COMPANY.incorporated}</p>
           </div>
         </div>
       </footer>
