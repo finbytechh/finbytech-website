@@ -223,7 +223,7 @@ function Layout({ children }) {
                 <li><Link to="/services">Mobile Apps</Link></li>
                 <li><Link to="/services">Cloud Services</Link></li>
                 <li><Link to="/services">Digital Marketing</Link></li>
-                <li><Link to="/oneclick">1Click Trading</Link></li>
+                <li><Link to="/ai-trading">AI Trading Platform</Link></li>
               </ul>
             </div>
 

@@ -5,7 +5,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Pricing from './pages/Pricing';
-import OneClick from './pages/OneClick';
+import AITrading from './pages/OneClick';
 import IntenseDating from './pages/IntenseDating';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
@@ -30,7 +30,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/oneclick" element={<OneClick />} />
+          <Route path="/ai-trading" element={<AITrading />} />
+          <Route path="/oneclick" element={<AITrading />} />
           <Route path="/intense-dating" element={<IntenseDating />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />

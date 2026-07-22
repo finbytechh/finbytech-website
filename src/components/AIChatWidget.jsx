@@ -14,19 +14,19 @@ function AIChatWidget() {
     "Services",
     "Intense Dating",
     "Contact Info",
-    "1Click Platform"
+    "AI Trading Platform"
   ];
 
   const getResponse = (message) => {
     const msg = message.toLowerCase();
     if (msg.includes('service') || msg.includes('offer') || msg.includes('provide')) {
-      return 'We offer Digital Marketing, Web Development, Mobile App Development, API Bridge Trading Software, Educational Courses, and our flagship 1Click Trade Manager platform. Visit our Services section for more details!';
+      return 'We offer Digital Marketing, Web Development, Mobile App Development, API Bridge Trading Software, Educational Courses, and our flagship AI Trading Platform. Visit our Services section for more details!';
     }
     if (msg.includes('intense dating') || msg.includes('dating app')) {
       return 'Intense Dating is our premium dating app with features like Private Chat, Video Calling, Voice Calling, Verified Profiles, and AI Matchmaking. Download it from Play Store or visit intensedating.in. WhatsApp support: +91 95153 63772';
     }
-    if (msg.includes('1click') || msg.includes('oneclick') || msg.includes('trade')) {
-      return '1Click Platform is our automated trading solution that connects your demat account via API Bridge. It supports major brokers and offers fully automated trading with pre-loaded strategies. Contact us for a demo!';
+    if (msg.includes('ai trading') || msg.includes('1click') || msg.includes('oneclick') || msg.includes('trade') || msg.includes('algo')) {
+      return 'Our AI Trading Platform is an advanced algorithmic trading solution that uses AI-powered strategies to automate your trades. It supports major brokers like Zerodha, Angel One, Upstox and offers one-click deployment, backtesting, paper trading, and real-time risk management. Contact us for a demo!';
     }
     if (msg.includes('contact') || msg.includes('phone') || msg.includes('email') || msg.includes('reach')) {
       return 'You can reach us at: Email: info@finbytech.com, Phone: +91 96511 18519, Website: finbytech.com. Our team is available Monday-Saturday, 10am-7pm IST.';
@@ -38,7 +38,7 @@ function AIChatWidget() {
       return 'All subscription fees are non-refundable as per our policy. We recommend taking our Expert Advice evaluation before subscribing. Check our Refund Policy page for complete details.';
     }
     if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
-      return 'Hello! Welcome to Finbytechnovation IT Solutions. How can I assist you today? Feel free to ask about our services, Intense Dating app, or 1Click Platform!';
+      return 'Hello! Welcome to Finbytechnovation IT Solutions. How can I assist you today? Feel free to ask about our services, Intense Dating app, or AI Trading Platform!';
     }
     if (msg.includes('thank')) {
       return "You're welcome! Is there anything else I can help you with? We're here to assist you 24/7.";
